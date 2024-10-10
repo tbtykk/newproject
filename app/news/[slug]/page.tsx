@@ -3,7 +3,6 @@ import { getNewsDatail } from '@/app/_libs/microcms';
 import styles from './page.module.css';
 import Article from '@/app/_components/Articles';
 import ButtonLink from '@/app/_components/ButtonLink';
-import Link from 'next/link';
 
 type Props = {
   params: {
