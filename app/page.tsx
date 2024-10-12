@@ -5,6 +5,8 @@ import { TOP_NEWS_LIMIT} from "@/app/_constants";
 import NewsList from "@/app/_components/NewsList";
 import ButtonLink from "@/app/_components/ButtonLink";
 
+export const revalidate = 60;
+
 export default async function Home() {
   const data = await getNewsList({
     limit: TOP_NEWS_LIMIT,
@@ -17,7 +19,7 @@ export default async function Home() {
         <h1 className={styles.title}>テクノロジーで世界を変える</h1>
         <p className={styles.description}>私たちは市場をリードしているグローバルテックカンパニーです</p>
       </div>
-      <Image className={styles.bgimg} src="/img-mv.jpg" alt="" width={4000} height={1200}
+      <Image className={styles.bgimg} src="/img-mv.jpg" alt="" width={4000} height={1200} priority sizes="(max-width:640px) 100vw, 50vw"
       />
     </section>
     <section className={styles.news}>

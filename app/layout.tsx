@@ -1,5 +1,5 @@
 import './globals.css';
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import Header from './_components/Header';
 import Footer from './_components/Footer';
@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 60;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,6 +37,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-XXX"/>
     </html>
   );
 }
